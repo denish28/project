@@ -1,0 +1,20 @@
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <!-- ensure logout link styles match other items -->
+    <style>
+        .sidebar a.logout-link { background: transparent !important; color: #cbd5e1 !important; }
+        .sidebar a.logout-link:hover {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light)) !important;
+            color: white !important;
+            transform: translateX(6px) !important;
+        }
+    </style>
+
+    <a href="{% url 'addashboard' %}">Dashboard</a>
+    <a href="{% url 'manage_jobs' %}">Manage Jobs</a>
+    <a href="{% url 'applications' %}">Applications</a>
+    <a href="{% url 'users' %}">Users</a>
+    <a href="{% url 'faq' %}">Contacts</a>
+    <a href="{% url 'issues' %}">Issues</a>
+    <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+</div>

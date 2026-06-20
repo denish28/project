@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Job</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/add_jobs.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin-footer.css' %}">
+
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+{% include 'admin/sidebar.html' %}
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main-content">
+
+    <h2>Edit Job</h2>
+
+    <div class="form-container">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Category</label>
+                <input type="text" name="category" value="{{ job.category }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Position Name</label>
+                <input type="text" name="position" value="{{ job.position }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Company Name</label>
+                <input type="text" name="company" value="{{ job.company }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Company Address</label>
+                <textarea name="address" required>{{ job.address }}</textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Contact Number</label>
+                <input type="text" name="contact" value="{{ job.contact }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" value="{{ job.email }}" required>
+            </div>
+
+            <div class="input-group">
+                <label>Current Image</label><br>
+                {% if job.image %}
+                    <img src="{{ job.image }}" style="max-width:200px;">
+                {% else %}
+                    <p>No image uploaded</p>
+                {% endif %}
+            </div>
+
+            <div class="input-group">
+                <label>Upload New Image (Optional)</label>
+                <input type="file" name="image" accept="image/*">
+            </div>
+
+            <input type="submit" class="add-btn" value="Update Job">
+
+        </form>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

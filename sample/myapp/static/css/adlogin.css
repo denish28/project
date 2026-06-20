@@ -1,0 +1,165 @@
+/* ===== Premium Admin Login UI ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --dark: #0f172a;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ===== Full Page Background ===== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/111111111.jpg") no-repeat center center/cover;
+    position: relative;
+
+}
+
+/* Soft overlay for premium look */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== Login Card ===== */
+
+.login-container {
+    position: relative;
+    width: 480px;
+    padding: 55px 50px;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.6s ease;
+    z-index: 1;
+}
+
+/* ===== Heading ===== */
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 28yypx;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== Input Group ===== */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ===== Login Button ===== */
+
+.login-btn {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+}
+
+/* ===== Footer Text ===== */
+
+.footer-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* ===== Animation ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+
+    body {
+        justify-content: center;
+        padding-right: 0;
+        padding: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+.error {
+    margin-bottom: 18px;
+    padding: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+
+}

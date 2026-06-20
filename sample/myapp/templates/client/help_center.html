@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Job Portal</title>
+    <link rel="stylesheet" href="{% static 'css/help_center.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+{% include 'client/header.html' %}
+
+<!-- ===== HELP CENTER CONTENT ===== -->
+<div class="help-container">
+    <div class="help-header">
+        <h1>Help Center</h1>
+        <p>Find answers to common questions and get support</p>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-section">
+        <input type="text" id="searchBox" placeholder="Search for help..." class="search-input">
+    </div>
+
+    <!-- FAQ SECTIONS -->
+    <div class="faq-section">
+        <!-- Getting Started -->
+        <div class="faq-category">
+            <h2>Getting Started</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I create an account?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>To create an account on our Job Portal, click the "Register" button on the home page. Fill in your details including name, email, password, and confirm password. Click the "Register" button and you'll receive a confirmation email. Verify your email and you're ready to start!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>Is registration free?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Registration is completely free for job seekers. You can create an account and start applying for jobs without any charges. Our platform is designed to help you find your dream job at no cost.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I reset my password?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Go to the login page and click "Forgot Password". Enter your email address associated with your account. You'll receive an email with instructions to reset your password. Follow the link and create a new password.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Job Search & Application -->
+        <div class="faq-category">
+            <h2>Job Search & Application</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I search for jobs?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Use the search bar on the home page or visit the "Jobs" section. You can filter by job title and location. Click on any job posting to see full details including responsibilities, requirements, salary, and company information. Apply with just a few clicks!</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I apply for a job?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Find a job that interests you and click the "Apply Now" button. Review your profile information to ensure accuracy. Add any additional supporting documents if needed, then submit your application. You'll receive a confirmation email immediately.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>Can I apply for multiple jobs?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! You can apply for as many jobs as you'd like. There's no limit to the number of applications you can submit. We recommend tailoring your applications to each position for better chances of success.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I track my applications?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Visit your "Applications" dashboard by logging in to your account. Here you can see all your submitted applications, their status (Applied, Reviewed, Shortlisted, Rejected), and any messages from employers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account & Profile -->
+        <div class="faq-category">
+            <h2>Account & Profile</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I update my profile?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Log in to your account and navigate to your profile section. You can update your personal information, skills, education, work experience, and profile picture. Save your changes and they'll be reflected immediately on your public profile.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>Can I delete my account?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can request account deletion from your account settings. Please note that deleting your account will remove all your profile information and application history. Contact our support team for assistance with this process.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>Is my personal information secure?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, security is our top priority. We use industry-standard encryption to protect your personal data. Your information is never shared with third parties without your consent. See our Privacy Policy for more details.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support & Troubleshooting -->
+        <div class="faq-category">
+            <h2>Support & Troubleshooting</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>I'm having trouble logging in. What should I do?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>First, ensure you're using the correct email and password. If you've forgotten your password, use the "Forgot Password" option. Clear your browser cache and cookies, then try again. If the issue persists, contact support@jobportal.com.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>The website is loading slowly. How can I fix this?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Try refreshing the page or clearing your browser cache. Disable browser extensions that might interfere. Check your internet connection speed. If the issue continues, try accessing the site from a different browser or device.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>How do I contact customer support?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can contact us through multiple channels: Email us at support@jobportal.com, visit our Contact Us page, or use the live chat feature available 24/7. Our support team typically responds within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>❓</span>
+                    <span>What should I do if I find a bug?</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We appreciate bug reports! Please describe the issue in detail, including screenshots if possible, and email it to support@jobportal.com. Include your browser type, version, and operating system. This helps our team resolve issues faster.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+{% include 'client/footer.html' %}
+
+<script>
+function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    element.parentElement.classList.toggle('active');
+}
+
+// Search functionality
+document.getElementById('searchBox').addEventListener('keyup', function() {
+    const searchTerm = this.value.toLowerCase();
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question').textContent.toLowerCase();
+        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+        
+        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

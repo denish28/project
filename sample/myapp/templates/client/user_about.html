@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Job Portal</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_about.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+{% include 'client/header.html' %}
+
+<!-- ===== ABOUT CONTENT ===== -->
+<div class="about">
+
+    <h1>About Our Job Portal</h1>
+
+    <p>
+        Our Job Portal helps job seekers find the best career opportunities
+        and allows companies to hire talented candidates easily.
+        We connect employers and applicants through a simple and fast platform.
+    </p>
+
+    <p>
+        Our mission is to simplify the hiring process by providing
+        a modern system where users can explore jobs, apply online,
+        and build successful careers.
+    </p>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>🎯 Our Mission</h3>
+            <p>Helping people find the right job quickly and easily.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Our Vision</h3>
+            <p>To become a trusted platform for recruitment worldwide.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Our Services</h3>
+            <p>Job listing, easy application, and fast hiring solutions.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+{% include 'client/footer.html' %}
+
+</body>
+</html>

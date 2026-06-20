@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="logo">Carrier Connect</div>
+
+    <div class="nav">
+        {% if request.session.user_username %}
+        <!-- welcome text placed before the Home link -->
+        <div class="welcome" style="margin-right:20px;">Welcome, {{ request.session.user_username }} 👋</div>
+        {% endif %}
+        <a href="{% url 'user_home' %}">Home</a>
+        <a href="{% url 'user_jobs' %}">Jobs</a>
+        {% if request.session.user_username %}
+        <a href="{% url 'user_application' %}">My Applications</a>
+        {% endif %}
+        <a href="{% url 'user_about' %}">About Us</a>
+        <a href="{% url 'user_contact' %}">Contact Us</a>
+        {% if request.session.user_username %}
+        <a href="{% url 'client_logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'user_login' %}">Login</a>
+        {% endif %}
+    </div>
+</div>

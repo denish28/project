@@ -1,0 +1,450 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Job Portal</title>
+    <link rel="stylesheet" href="{% static 'css/documentation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+{% include 'client/header.html' %}
+
+<!-- ===== DOCUMENTATION CONTENT ===== -->
+<div class="doc-container">
+    <div class="doc-content">
+        <!-- HEADER -->
+        <div class="doc-header">
+            <h1>Job Portal Documentation</h1>
+            <p>Complete guide to using the Job Portal platform</p>
+        </div>
+
+        <!-- GETTING STARTED -->
+        <section id="getting-started" class="doc-section">
+            <h2>Getting Started</h2>
+            
+            <div class="doc-subsection">
+                <h3>Introduction</h3>
+                <p>Welcome to the Job Portal, a modern platform designed to connect job seekers with employers. Whether you're looking for your next career opportunity or hiring top talent, our platform makes it simple and efficient.</p>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>System Requirements</h3>
+                <ul>
+                    <li>Modern web browser (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)</li>
+                    <li>Stable internet connection</li>
+                    <li>JavaScript enabled</li>
+                    <li>Screen resolution of 1024x768 or higher (desktop)</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Creating an Account</h3>
+                <ol>
+                    <li>Click the "Register" button on the homepage</li>
+                    <li>Enter your full name, email address, and create a strong password</li>
+                    <li>Confirm your password and accept the Terms of Service</li>
+                    <li>Click "Register" to complete signup</li>
+                    <li>Verify your email by clicking the link sent to your inbox</li>
+                    <li>Log in with your credentials</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- USER GUIDE -->
+        <section id="user-guide" class="doc-section">
+            <h2>User Guide</h2>
+            
+            <div class="doc-subsection">
+                <h3>Dashboard Overview</h3>
+                <p>After logging in, you'll access your personal dashboard which contains:</p>
+                <ul>
+                    <li><strong>Quick Stats:</strong> Number of applications, profile views, and messages</li>
+                    <li><strong>Recent Applications:</strong> View status of your latest job applications</li>
+                    <li><strong>Recommended Jobs:</strong> AI-powered job suggestions based on your profile</li>
+                    <li><strong>Messages:</strong> Communication with employers</li>
+                    <li><strong>Profile Summary:</strong> Quick access to edit your profile</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Navigation Menu</h3>
+                <p>The main navigation menu provides quick access to:</p>
+                <ul>
+                    <li><strong>Home:</strong> Return to homepage and featured jobs</li>
+                    <li><strong>Jobs:</strong> Browse all available job listings</li>
+                    <li><strong>About Us:</strong> Learn about the Job Portal platform</li>
+                    <li><strong>Contact Us:</strong> Get in touch with our support team</li>
+                    <li><strong>Login:</strong> Sign in to your account</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>User Settings</h3>
+                <p>Access your account settings to:</p>
+                <ul>
+                    <li>Update personal information</li>
+                    <li>Change password</li>
+                    <li>Manage email preferences</li>
+                    <li>Set privacy settings</li>
+                    <li>View security logs</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- JOB SEARCH GUIDE -->
+        <section id="job-search" class="doc-section">
+            <h2>Job Search Guide</h2>
+            
+            <div class="doc-subsection">
+                <h3>Basic Search</h3>
+                <p>Use the search bar on the homepage or Jobs page to find opportunities:</p>
+                <ol>
+                    <li>Enter a job title (e.g., "Software Developer", "Marketing Manager")</li>
+                    <li>Enter a location (city or remote)</li>
+                    <li>Click the Search button</li>
+                    <li>View results matching your criteria</li>
+                </ol>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Advanced Filters</h3>
+                <p>Refine your search using available filters:</p>
+                <ul>
+                    <li><strong>Job Type:</strong> Full-time, Part-time, Contract, Internship</li>
+                    <li><strong>Experience Level:</strong> Entry, Mid, Senior, Executive</li>
+                    <li><strong>Salary Range:</strong> Filter by minimum and maximum salary</li>
+                    <li><strong>Company:</strong> Search within specific companies</li>
+                    <li><strong>Posted Date:</strong> Find recently posted jobs</li>
+                    <li><strong>Skills Required:</strong> Filter by required skills</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Saving Jobs</h3>
+                <p>Save your favorite jobs for later:</p>
+                <ol>
+                    <li>Click the heart icon on any job listing</li>
+                    <li>Access saved jobs from your dashboard</li>
+                    <li>Remove jobs by clicking the heart icon again</li>
+                    <li>Get email reminders for saved jobs</li>
+                </ol>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Job Details</h3>
+                <p>Each job listing provides:</p>
+                <ul>
+                    <li>Job title and company name</li>
+                    <li>Location and job type</li>
+                    <li>Salary range (if available)</li>
+                    <li>Job description and responsibilities</li>
+                    <li>Required skills and qualifications</li>
+                    <li>Application deadline</li>
+                    <li>Company information and website link</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- APPLICATION PROCESS -->
+        <section id="application-process" class="doc-section">
+            <h2>Application Process</h2>
+            
+            <div class="doc-subsection">
+                <h3>Submitting an Application</h3>
+                <ol>
+                    <li>Find a job you're interested in</li>
+                    <li>Click the "Apply Now" button</li>
+                    <li>Review your profile information</li>
+                    <li>Add a cover letter (optional but recommended)</li>
+                    <li>Attach additional documents (resume, portfolio)</li>
+                    <li>Click "Submit Application"</li>
+                    <li>Receive confirmation email</li>
+                </ol>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Application Status</h3>
+                <p>Track your application through these stages:</p>
+                <ul>
+                    <li><strong>Applied:</strong> Employer has received your application</li>
+                    <li><strong>Reviewed:</strong> Employer is reviewing your profile</li>
+                    <li><strong>Shortlisted:</strong> You've been selected for next round</li>
+                    <li><strong>Interview:</strong> Scheduled for an interview</li>
+                    <li><strong>Offered:</strong> Job offer received</li>
+                    <li><strong>Rejected:</strong> Application was not selected</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Communication with Employers</h3>
+                <p>After applying, you can communicate with employers through:</p>
+                <ul>
+                    <li>In-app messaging system</li>
+                    <li>Email notifications about your application</li>
+                    <li>Interview scheduling links</li>
+                    <li>Job offer letters and documentation</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Application Limits</h3>
+                <p>There are no limits to the number of applications you can submit. Apply to as many jobs as you'd like that match your interests and qualifications.</p>
+            </div>
+        </section>
+
+        <!-- PROFILE MANAGEMENT -->
+        <section id="profile-management" class="doc-section">
+            <h2>Profile Management</h2>
+            
+            <div class="doc-subsection">
+                <h3>Profile Information</h3>
+                <p>Your profile should include:</p>
+                <ul>
+                    <li><strong>Photo:</strong> Professional headshot (recommended)</li>
+                    <li><strong>Personal Details:</strong> Name, email, phone, location</li>
+                    <li><strong>Professional Summary:</strong> Brief description of your career</li>
+                    <li><strong>Skills:</strong> List of your professional skills</li>
+                    <li><strong>Experience:</strong> Work history and achievements</li>
+                    <li><strong>Education:</strong> Degree, institution, graduation year</li>
+                    <li><strong>Links:</strong> Portfolio, LinkedIn, GitHub, website</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Profile Completion</h3>
+                <p>A complete profile increases your chances of getting hired:</p>
+                <ol>
+                    <li>Aim for 100% profile completion</li>
+                    <li>Add a professional profile photo</li>
+                    <li>Write a compelling professional summary</li>
+                    <li>Add detailed work experience</li>
+                    <li>List all relevant skills</li>
+                    <li>Include educational background</li>
+                </ol>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Making Your Profile Visible</h3>
+                <p>Increase visibility to employers:</p>
+                <ul>
+                    <li>Set your profile to "Public" in privacy settings</li>
+                    <li>Use relevant keywords in your profile</li>
+                    <li>Update your profile regularly</li>
+                    <li>Add recent work experience and skills</li>
+                    <li>Maintain a professional tone</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BEST PRACTICES -->
+        <section id="best-practices" class="doc-section">
+            <h2>Best Practices</h2>
+            
+            <div class="doc-subsection">
+                <h3>Job Search Tips</h3>
+                <ul>
+                    <li>Use specific keywords related to your target role</li>
+                    <li>Set up job alerts to get notified of new opportunities</li>
+                    <li>Review job requirements carefully before applying</li>
+                    <li>Apply to jobs matching your experience level</li>
+                    <li>Customize your profile for each type of position</li>
+                    <li>Follow up on applications after 2 weeks</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Application Tips</h3>
+                <ul>
+                    <li>Tailor your cover letter to each job</li>
+                    <li>Customize your resume for the position</li>
+                    <li>Proofread before submitting</li>
+                    <li>Submit completed applications</li>
+                    <li>Follow application instructions carefully</li>
+                    <li>Apply quickly after job posting</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Profile Best Practices</h3>
+                <ul>
+                    <li>Use a clear, professional profile photo</li>
+                    <li>Write a compelling professional headline</li>
+                    <li>Highlight key achievements in your summary</li>
+                    <li>Use industry-specific keywords</li>
+                    <li>Keep information current and accurate</li>
+                    <li>Request recommendations from colleagues</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Interview Preparation</h3>
+                <ul>
+                    <li>Research the company thoroughly</li>
+                    <li>Prepare answers for common questions</li>
+                    <li>Dress professionally</li>
+                    <li>Test your internet connection (for video interviews)</li>
+                    <li>Have your resume handy</li>
+                    <li>Prepare questions to ask the interviewer</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- API DOCUMENTATION -->
+        <section id="api-docs" class="doc-section">
+            <h2>API Documentation</h2>
+            
+            <div class="doc-subsection">
+                <h3>API Overview</h3>
+                <p>The Job Portal provides a REST API for developers to integrate with our platform. This section covers API endpoints, authentication, and usage examples.</p>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Authentication</h3>
+                <p>All API requests require authentication using API tokens:</p>
+                <pre><code>Authorization: Bearer YOUR_API_TOKEN</code></pre>
+                <p>Get your API token from your account settings page.</p>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Base URL</h3>
+                <pre><code>https://jobportal.com/api/v1</code></pre>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Common Endpoints</h3>
+                <div class="code-block">
+                    <p><strong>GET /jobs</strong> - List all available jobs</p>
+                    <p><strong>GET /jobs/{id}</strong> - Get job details</p>
+                    <p><strong>POST /applications</strong> - Submit a job application</p>
+                    <p><strong>GET /applications</strong> - List user applications</p>
+                    <p><strong>GET /profile</strong> - Get user profile</p>
+                    <p><strong>PUT /profile</strong> - Update user profile</p>
+                </div>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Response Format</h3>
+                <p>All responses are returned in JSON format:</p>
+                <pre><code>{
+  "status": "success",
+  "data": { ... },
+  "message": "Operation completed successfully"
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- TROUBLESHOOTING -->
+        <section id="troubleshooting" class="doc-section">
+            <h2>Troubleshooting</h2>
+            
+            <div class="doc-subsection">
+                <h3>Common Issues</h3>
+                
+                <div class="issue">
+                    <h4>❌ Login Issues</h4>
+                    <p><strong>Problem:</strong> Unable to log in</p>
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Verify you're using the correct email and password</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Try using "Forgot Password" to reset your password</li>
+                        <li>Check if your account is verified</li>
+                        <li>Try a different browser</li>
+                    </ul>
+                </div>
+
+                <div class="issue">
+                    <h4>❌ Application Not Submitting</h4>
+                    <p><strong>Problem:</strong> Application won't submit</p>
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Ensure your profile is complete</li>
+                        <li>Check for required fields in the application form</li>
+                        <li>Verify file sizes of uploaded documents (max 5MB)</li>
+                        <li>Check your internet connection</li>
+                        <li>Refresh the page and try again</li>
+                    </ul>
+                </div>
+
+                <div class="issue">
+                    <h4>❌ Email Not Received</h4>
+                    <p><strong>Problem:</strong> Not receiving emails from the platform</p>
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Check your spam/junk folder</li>
+                        <li>Add support@jobportal.com to your contacts</li>
+                        <li>Check email notification settings in your account</li>
+                        <li>Verify your email address is correct</li>
+                        <li>Make sure email notifications are enabled</li>
+                    </ul>
+                </div>
+
+                <div class="issue">
+                    <h4>❌ Page Loading Slowly</h4>
+                    <p><strong>Problem:</strong> Website is slow or not loading</p>
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Check your internet connection speed</li>
+                        <li>Disable browser extensions and try again</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Try accessing from a different browser</li>
+                        <li>Check the system status page for any outages</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Getting Support</h3>
+                <p>If you can't resolve an issue:</p>
+                <ul>
+                    <li>Visit our Help Center for detailed guides</li>
+                    <li>Email: support@jobportal.com</li>
+                    <li>Live Chat: Available 24/7 on our website</li>
+                    <li>Contact Us: Use the contact form on our Contact Us page</li>
+                    <li>Phone: +1-800-JOBPORTAL (during business hours)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- VERSION AND UPDATES -->
+        <section id="updates" class="doc-section">
+            <h2>Latest Updates</h2>
+            
+            <div class="doc-subsection">
+                <h3>Version 1.0 - 2026</h3>
+                <ul>
+                    <li>✅ Launch of Job Portal platform</li>
+                    <li>✅ User registration and authentication</li>
+                    <li>✅ Job search and filtering</li>
+                    <li>✅ Application management</li>
+                    <li>✅ Profile management</li>
+                    <li>✅ Employer dashboard</li>
+                    <li>✅ Messaging system</li>
+                    <li>✅ Advanced search filters</li>
+                </ul>
+            </div>
+
+            <div class="doc-subsection">
+                <h3>Planned Features</h3>
+                <ul>
+                    <li>🔄 AI-powered job recommendations</li>
+                    <li>🔄 Video interview platform</li>
+                    <li>🔄 Resume builder</li>
+                    <li>🔄 Skill assessments</li>
+                    <li>🔄 Career coaching</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+{% include 'client/footer.html' %}
+
+</body>
+</html>

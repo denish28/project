@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Job Portal</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/addashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin-footer.css' %}">
+
+</head>
+
+<body>
+
+<!-- ===== Sidebar ===== -->
+{% include 'admin/sidebar.html' %}
+
+<!-- ===== Main Content ===== -->
+<div class="main">
+
+    <div class="header">
+        <h1>Dashboard</h1>
+        <div class="welcome">welcome &nbsp;{{  request.session.username }} 👋</div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>Total Jobs</h3>
+            <p>{{ job_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Applications</h3>
+            <p>{{ app_count }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Registered Users</h3>
+            <p>{{ user_count }}</p>
+        </div>
+    </div>
+
+    <!-- Job Table -->
+    <div class="table-container">
+
+        <a href="{% url 'add_jobs' %}" class="add-job">+ Add New Job</a>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Position</th>
+                <th>Company</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Email</th>
+                
+            </tr>
+            {% for job in jobs %}
+            <tr>
+            <td>{{ job.id }}</td>
+            <td><img src="{{ job.image }}" class="job-img"></td>
+            <td>{{ job.category }}</td>
+            <td>{{ job.position }}</td>
+            <td>{{ job.company }}</td>
+            <td>{{ job.address }}</td>
+            <td>{{ job.contact }}</td>
+            <td>{{ job.email }}</td>
+        </tr>
+    {% endfor %}
+        </table>
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

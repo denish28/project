@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  {% if messages %} {% for message in messages %}
+  <script>
+    alert("{{ message }}");
+  </script>
+  {% endfor %} {% endif %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/user_home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+  </head>
+
+  <body>
+    {% include 'client/header.html' %}
+
+    <!-- ===== HERO SECTION ===== -->
+    <div class="hero">
+      <div>
+        <h1>Find Your Dream Job</h1>
+        <p>Thousands of opportunities waiting for you</p>
+
+        <div class="search-box">
+          <form method="get" action="{% url 'user_jobs' %}" class="search-form">
+            <input type="text" name="job_title" placeholder="Job title" />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JOB CATEGORIES ===== -->
+    <div class="section">
+      <h2>Popular Categories</h2>
+
+      <div class="categories">
+        <div class="cat">💻 IT & Software</div>
+        <div class="cat">🎨 Design</div>
+        <div class="cat">📊 Marketing</div>
+        <div class="cat">🏦 Finance</div>
+      </div>
+    </div>
+
+    <!-- ===== FEATURES ===== -->
+    <div class="section">
+      <h2>Why Choose Us</h2>
+
+      <div class="features">
+        <div class="feature">✅ Trusted Companies</div>
+        <div class="feature">⚡ Easy Apply Process</div>
+        <div class="feature">🚀 Fast Hiring</div>
+        <div class="feature">🔒 Secure Platform</div>
+        <div class="feature">📞 24/7 Support</div>
+      </div>
+    </div>
+
+    {% include 'client/footer.html' %}
+  </body>
+</html>

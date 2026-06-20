@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+    <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/applications.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin-footer.css' %}">
+        </head>
+        <body>
+{% include 'admin/sidebar.html' %}
+<div class="table-container">
+
+    <h2>Manage Contacts</h2>
+
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+
+        {% for faq in faqs %}
+        <tr>
+            <td>{{ faq.id }}</td>
+            <td>{{ faq.name }}</td>
+            <td>{{ faq.email }}</td>
+            <td>{{ faq.message }}</td>
+            <td>
+                <a href="{% url 'delete_faq' faq.id %}" class="delete-btn"
+                   onclick="return confirm('Delete this FAQ?')">Delete</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+<br>
+</body>
+</html>

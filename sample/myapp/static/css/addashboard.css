@@ -1,0 +1,374 @@
+/* ===== Advanced Admin Dashboard CSS ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --secondary: #0f172a;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --bg-light: #f1f5f9;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    position: relative;
+}
+
+/* Light overlay to fade background image */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75);
+    z-index: -1;
+}
+.main
+{
+     background: url("../images/111111111.jpg") no-repeat center center/cover;
+     margin-left: 270px;
+     padding: 40px;
+     width: 100%;
+     transition: 0.4s ease;
+     animation: fadeInUp 0.5s ease;
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    animation: fadeInLeft 0.6s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.sidebar a:hover {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    transform: translateX(6px);
+}
+
+/* Logout Button */
+.sidebar a[href*="adlogin"] {
+    margin-top: auto;
+    background: rgba(239,68,68,0.08);
+    color: #f87171;
+}
+
+.sidebar a[href*="adlogin"]:hover {
+    background: rgba(239,68,68,0.18);
+    color: white;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary), #9333ea);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header div {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.card {
+    padding: 28px;
+    border-radius: 16px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: var(--shadow);
+}
+.card {
+    padding: 28px;
+    border-radius: 16px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.7s ease;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+.card {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.card:nth-child(1) {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+}
+
+.card:nth-child(2) {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.card:nth-child(3) {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.card h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.card p {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* Decorative Glow */
+.card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    top: -30px;
+    right: -30px;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease;
+}
+
+.add-job {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 12px 22px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-job:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Chart container */
+.chart-container {
+    max-width: 500px;
+    /* allow the parent flexbox to position it */
+    margin: 0;
+}
+
+/* top section with header and chart side by side */
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* ensure chart does not stretch too wide on small screens */
+.dashboard-top .chart-container {
+    margin-left: auto;
+}
+
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background: #f8fafc;
+    position: sticky;
+    top: 0;
+}
+
+th {
+    padding: 16px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+tr {
+    transition: 0.3s;
+}
+
+tr:hover {
+    background: #f1f5ff;
+}
+
+/* Job Image */
+.job-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), #9333ea);
+    border-radius: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+/* ================= GLOBAL FADE ANIMATION ================= */
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.welcome {
+    font-size: 14px;
+    color: rgba(100, 116, 139, 0.15);
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

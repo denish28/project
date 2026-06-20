@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Applications - Admin</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/applications.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin-footer.css' %}">
+</head>
+
+<body>
+
+{% include 'admin/sidebar.html' %}
+
+<div class="table-container">
+<h2>Manage Job Applications</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Applicant Name</th>
+        <th>Category</th>
+        <th>Company</th>
+        <th>Applied For</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Resume</th>
+        <th>Action</th>
+    </tr>
+
+    {% for application in applications %}
+
+    <tr>
+        <td>{{ application.id }}</td>
+        <td>{{ application.name }}</td>
+        <td>{{ application.category }}</td>
+        <td>{{ application.company }}</td>
+        <td>{{ application.position }}</td>
+        <td>{{ application.email }}</td>
+        <td>{{ application.contact }}</td>
+            <td><a href="{{ application.image }}" target="_blank" class="resume-btn">View Resume</a></td>
+        <td><a href="{% url 'delete_application' application.id %}" onclick="return confirm('Are you sure you want to delete this application?')" class="delete-btn">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration - Job Portal</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_register.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+{% include 'client/header.html' %}
+<body>
+
+<div class="page-content">
+    <div class="register-container">
+
+        <h2>User Registration</h2>
+
+        <form action="{% url 'user_register' %}" method="post">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Contact Number</label>
+                <input type="tel" name="contact" required>
+            </div>
+
+            <div class="input-group">
+                <label>City</label>
+                <input type="text" name="city" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <input type="submit" class="register-btn">
+
+        </form>
+
+        <div class="login-link">
+            Already have account?
+            <a href="{% url 'user_login' %}">Login</a>
+        </div>
+
+    </div>
+</div>
+
+{% include 'client/footer.html' %}
+
+</body>
+</html>

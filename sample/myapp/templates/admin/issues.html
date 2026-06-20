@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reported Issues - Admin</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/applications.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin-footer.css' %}">
+
+</head>
+
+<body>
+
+{% include 'admin/sidebar.html' %}
+
+<div class="table-container">
+ <h2>Reported Issues</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Description</th>
+        <th>Screenshot</th>
+        <th>Action</th>
+    </tr>
+    {% for issue in issues %}
+    <tr>
+        <td>{{ issue.id }}</td>
+        <td>{{ issue.name }}</td>
+        <td>{{ issue.email }}</td>
+        <td>{{ issue.description }}</td>
+        <td>
+            {% if issue.image %}
+                <a href="{{ issue.image }}" target="_blank" class="resume-btn">View</a>
+            {% else %}
+                —
+            {% endif %}
+        </td>
+        <td><a href="{% url 'delete_issue' issue.id %}" onclick="return confirm('Delete this report?')" class="delete-btn">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+
+<br>
+
+
+
+
+</body>
+</html>

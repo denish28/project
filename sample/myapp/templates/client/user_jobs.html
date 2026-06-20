@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Jobs</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/user_jobs.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      {% include 'client/header.html' %}
+            
+      <!-- ===== TITLE ===== -->
+      <div class="title">
+        <h2>Available Jobs</h2>
+        <p>Browse latest opportunities</p>
+      </div>
+
+      <!-- ===== JOB LIST ===== -->
+      <!-- ===== JOB LIST ===== -->
+      <div class="jobs">
+        {% for job in jobs %}
+        <div class="job-card">
+          <div class="job-left">
+            <img src="{{ job.image }}" class="job-img" />
+          </div>
+
+          <!-- right side groups details + action so they can be spaced vertically -->
+          <div class="job-right">
+            <div class="job-details">
+              <h1>{{ job.position }}</h1>
+              <p class="company">{{ job.company }}</p>
+
+              <div class="job-info">
+                <div><strong>Category:</strong> {{ job.category }}</div>
+                <div><strong>Location:</strong> {{ job.address }}</div>
+                <div><strong>Contact:</strong> {{ job.contact }}</div>
+                <div><strong>Email:</strong> {{ job.email }}</div>
+              </div>
+            </div>
+            <div class="job-action">
+              {% if job.company in applied_companies %}
+              <span class="applied-label">Applied</span>
+              {% else %}
+              <a
+                href="{% url 'user_apply_jobs' %}?position={{ job.position|urlencode }}&category={{ job.category|urlencode }}&company={{ job.company|urlencode }}"
+                class="apply-btn"
+                >Apply Now</a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% include 'client/footer.html' %}
+  </body>
+</html>

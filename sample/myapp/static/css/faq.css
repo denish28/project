@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --danger: #ef4444;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background: url("../images/111111111.jpg") no-repeat center center/cover;
+    margin: 0;
+    
+   
+}
+
+/* ================= GLOBAL ANIMATIONS ================= */
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 270px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    transition: 0.4s ease;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    z-index: 1000;
+    animation: fadeInLeft 0.6s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.sidebar a:hover {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    transform: translateX(6px);
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 90px;
+}
+
+.sidebar.collapsed a span {
+    display: none;
+}
+
+.sidebar.collapsed h2 {
+    display: none;
+}
+
+/* ================= FAQ CONTAINER ================= */
+
+.faq-admin-container {
+    margin-left: 270px;
+    height: 100vh;
+    padding: 30px 50px;
+    overflow-y: auto;
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Fix for collapsed sidebar */
+.sidebar.collapsed ~ .faq-admin-container {
+    margin-left: 90px;
+}
+
+/* ================= TITLE ================= */
+
+/* unify headings with dashboard */
+.header h1,
+.table-container h2,
+.faq-admin-container h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, var(--primary), #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ================= TABLE ================= */
+
+.faq-admin-container table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Header */
+.faq-admin-container th {
+    padding: 22px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    background: #f8fafc;
+}
+
+/* Body */
+.faq-admin-container td {
+    padding: 22px;
+    font-size: 14px;
+    color: var(--text-dark);
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ===== Stagger Row Animation ===== */
+
+.faq-admin-container tbody tr {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.faq-admin-container tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.faq-admin-container tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.faq-admin-container tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.faq-admin-container tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.faq-admin-container tbody tr:nth-child(5) { animation-delay: 0.5s; }
+
+/* Hover */
+.faq-admin-container tbody tr:hover {
+    background: #eef2ff;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn {
+    padding: 9px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    color: white;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.delete-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.35);
+}
+button {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    border: none;
+    background: none;
+    animation: fadeInUp 1s ease;
+}
+
+/* back button styles removed as unused */
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .faq-admin-container {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .faq-admin-container table,
+    .faq-admin-container th,
+    .faq-admin-container td {
+        font-size: 12px;
+    }
+}

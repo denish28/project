@@ -1,0 +1,262 @@
+/* ===== Premium Add/Edit Job Page ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
+    --danger: #ef4444;
+    --success: #10b981;
+    --dark: #0f172a;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --bg: #f1f5f9;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    color: var(--text-dark);
+     background: url("../images/111111111.jpg") no-repeat center center/cover;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+    animation: fadeInLeft 0.6s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.sidebar a:hover {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    transform: translateX(6px);
+}
+
+/* Logout Button */
+.sidebar a[href*="adlogin"] {
+    margin-top: auto;
+    background: rgba(239,68,68,0.08);
+    color: #f87171;
+}
+
+.sidebar a[href*="adlogin"]:hover {
+    background: rgba(239,68,68,0.18);
+    color: white;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Page Title */
+.main-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* ================= FORM CONTAINER ================= */
+.form-container {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    max-width: 850px;
+    animation: fadeInUp 0.7s ease;
+}
+
+/* ================= FORM ================= */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+}
+
+/* Full-width fields */
+.input-group:nth-child(4),
+.input-group:nth-child(7),
+.input-group:nth-child(8),
+input.add-btn {
+    grid-column: span 2;
+}
+
+/* Input Group */
+/* Stagger Form Field Animation */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.1s; }
+.input-group:nth-child(2) { animation-delay: 0.2s; }
+.input-group:nth-child(3) { animation-delay: 0.3s; }
+.input-group:nth-child(4) { animation-delay: 0.4s; }
+.input-group:nth-child(5) { animation-delay: 0.5s; }
+.input-group:nth-child(6) { animation-delay: 0.6s; }
+.input-group:nth-child(7) { animation-delay: 0.7s; }
+.input-group:nth-child(8) { animation-delay: 0.8s; }
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-dark);
+}
+
+/* Inputs & Textarea */
+.input-group input,
+.input-group textarea {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(79,70,229,0.15);
+    transform: translateY(-2px);
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+/* Current Image Preview */
+.input-group img {
+    max-width: 200px;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* File Input */
+input[type="file"] {
+    background: var(--white);
+    border: 1px dashed #c7d2fe;
+    padding: 12px;
+    cursor: pointer;
+}
+
+/* Submit Button */
+input.add-btn {
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease;
+}
+
+input.add-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(79,70,229,0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 25px;
+    }
+    .form-container {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    form {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}   

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Issue - Job Portal</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_contact.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+
+<body>
+
+{% include 'client/header.html' %}
+
+<!-- ===== REPORT ISSUE CONTENT ===== -->
+<div class="contact-container">
+
+    <!-- Info Section -->
+    <div class="contact-info">
+        <h2>Report an Issue</h2>
+        <p>If you encountered a problem with a job posting or the site, please let us know.</p>
+        {% if id %}
+        <p>Job ID: {{ id }}</p>
+        {% endif %}
+        <br>
+        <p>
+            Describe the issue in detail and our support team will reach out as soon as possible.
+        </p>
+    </div>
+
+    <!-- Issue Form -->
+    <div class="contact-form">
+        <h2>Issue Form</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="input-group">
+                <textarea name="issue" placeholder="Describe the issue" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="screenshot">Screenshot (optional)</label>
+                <input type="file" name="screenshot" id="screenshot" accept="image/*">
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Issue</button>
+        </form>
+    </div>
+
+</div>
+
+{%include 'client/footer.html' %}
+
+</body>
+</html>

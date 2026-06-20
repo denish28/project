@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Job</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_apply_jobs.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+</head>
+
+<body>
+{% include 'client/header.html' %}
+
+
+    <div class="form-box">
+
+        <h2>Apply for Job</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <table style="width:100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Name</label>
+                            <input type="text" name="name" placeholder="Full Name" value="{{ name|default:'' }}" required>
+                        </div>
+                    </td>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" name="email" placeholder="Email Address" value="{{ email|default:'' }}" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Contact Number</label>
+                            <input type="tel" name="contact" placeholder="Mobile Number" value="{{ contact|default:'' }}" required>
+                        </div>
+                    </td>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Category</label>
+                            <input type="text" name="category" placeholder="Job Category" value="{{ category|default:'' }}" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Position Applying For</label>
+                            <input type="text" name="position" placeholder="Position Name" value="{{ position|default:'' }}" required>
+                        </div>
+                    </td>
+                    <td style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Company</label>
+                            <input type="text" name="company" placeholder="Company Name" value="{{ company|default:'' }}" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding:0 10px; vertical-align: top;">
+                        <div class="input-group">
+                            <label>Upload Resume</label>
+                            <input type="file" name="image" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-top:20px;">
+                        <input type="submit" class="submit-btn" value="Submit Application">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+
+    </div>
+{% include 'client/footer.html' %}
+</body>
+</html>

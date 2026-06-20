@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% if messages %}
+    {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+    {% endfor %}
+    {% endif %}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Login - Job Portal</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/user_login.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+{% include 'client/header.html' %}
+<body>
+
+<div class="page-content">
+    <div class="login-container">
+
+        <h2>User Login</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="post" action="{% url 'user_login' %}">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="register-link">
+            Don't have account?
+            <a href="{% url 'user_register' %}">Register</a>
+        </div>
+
+    </div>
+</div>
+{% include 'client/footer.html' %}
+</body>
+</html>
